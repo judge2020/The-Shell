@@ -5,12 +5,182 @@
 
 {{! The big featured header on the homepage, with the site logo and description }}
 <header id="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+<style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      .me {
+  display: block;
+  margin: 2em auto;
+  margin-bottom: 3em;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+.social {
+  text-align: center;
+  font-size: 2.5em;
+  color: #555;
+  overflow: hidden;
+}
+.social a {
+  color: inherit;
+  text-decoration: none;
+}
+.social i {
+  margin: .3em;
+  cursor: pointer;
+  transition: color 300ms ease, margin-top 300ms ease;
+  transform: translateZ(0);
+}
+.social i#twitter:hover {
+  color: #77DDF6;
+}
+.social i#github:hover {
+  color: black;
+}
+.social i#linkedin:hover {
+  color: #ff4500;
+}
+.social i#code:hover {
+  color: #29A329;
+}
+.social i#stack:hover {
+  color: #ED780E;
+}
+.social i#plus:hover {
+  color: #009cde;
+}
+.social i#mail:hover {
+  color: black;
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <div class="vertical animated bounceInDown">
         <div id="site-head-content" class="inner">
 
-            {{#if @blog.logo}}<a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+            {{#if @blog.logo}}<a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Judge2020 blog Logo" /></a>{{/if}}
             <h1 class="blog-title">{{@blog.title}}</h1>
-            <h2 class="blog-description">{{@blog.description}}</h2>
+            <div class="social">
+  <a href="https://twitter.com/judge2020_" target="_parent"><i id="twitter" class="fa fa-twitter"></i></a>
+  <a href="https://github.com/judge2020" target="_parent"><i id="github" class="fa fa-github"></i></a>
+  <a href="http://stackexchange.com/users/4802762/judge2020" target="_parent"><i id="stack" class="fa fa-stack-overflow"></i></a>
+  <a href="https://www.reddit.com/u/judge2020" target="_parent"><i id="linkedin" class="fa fa-reddit"></i></a>
+  <a href="https://twitter.com/GM4_MC" target="_parent"><i id="code" class="icon-code"></i></a>
+  <a href="https://www.paypal.me/judge2020" target="_parent"><i id="plus" class="fa fa-paypal"></i></a>
+  <a href="https://steamcommunity.com/id/judge2020" target="_parent"><i id="mail" class="fa fa-steam"></i> </a>
+  
+</div>
+<script type="text/javascript">
+
+$(window).load(function() {
+  $('i').show();
+
+  var twitterPos = $('#twitter').position();
+  var githubPos = $('#github').position();
+  var stackPos = $('#stack').position();
+  var linkedinPos = $('#linkedin').position();
+  var codePos = $('#code').position();
+  var plusPos = $('#plus').position();
+  var mailPos = $('#mail').position();
+  var imgPos = $('.me').position();
+  
+  $('i').css({
+    position: 'absolute',
+    zIndex: '1',
+    top: imgPos.top + 100,
+    left: '47%'
+  });
+  
+  setTimeout(function() {
+    $('#twitter').animate({
+      top: twitterPos.top + 10,
+      left: twitterPos.left - 10
+    }, 500);
+  }, 250);
+  
+  setTimeout(function() {
+    $('#twitter').animate({
+      top: twitterPos.top,
+      left: twitterPos.left
+    }, 250);
+    
+    $('#github').animate({
+      top: githubPos.top + 10,
+      left: githubPos.left - 6
+    }, 500);
+  }, 500);
+  
+  setTimeout(function() {
+    $('#github').animate({
+      top: githubPos.top,
+      left: githubPos.left
+    }, 250);
+    
+    $('#stack').animate({
+      top: stackPos.top + 10,
+      left: stackPos.left - 3
+    }, 500);
+  }, 750);
+  
+  setTimeout(function() {
+    $('#stack').animate({
+      top: stackPos.top,
+      left: stackPos.left
+    }, 250);
+    
+    $('#linkedin').animate({
+      top: linkedinPos.top + 10,
+      left: linkedinPos.left
+    }, 500);
+  }, 1000);
+  
+  setTimeout(function() {
+    $('#linkedin').animate({
+      top: linkedinPos.top,
+      left: linkedinPos.left
+    }, 250);
+    
+    $('#code').animate({
+      top: codePos.top + 10,
+      left: codePos.left + 3
+    }, 500);
+  }, 1250);
+  
+  setTimeout(function() {
+    $('#code').animate({
+      top: codePos.top,
+      left: codePos.left
+    }, 250);
+    
+    $('#plus').animate({
+      top: plusPos.top + 10,
+      left: plusPos.left + 6
+    }, 500);
+  }, 1500);
+  
+  setTimeout(function() {
+    $('#plus').animate({
+      top: plusPos.top,
+      left: plusPos.left
+    }, 250);
+    
+    $('#mail').animate({
+      top: mailPos.top + 10,
+      left: mailPos.left + 10
+    }, 500);
+  }, 1750);
+  
+  setTimeout(function() {
+    $('#mail').animate({
+      top: mailPos.top,
+      left: mailPos.left
+    }, 250);
+  }, 2000);
+  
+})
+</script>
         </div>
     </div>
 </header>
