@@ -1,8 +1,8 @@
 {
     "name": "judge2020",
     "description" : "modification of ghost",
-    "demo": "https://judge2020.ghost.io",
-    "version": "1.0.3",
+    "demo": "https://judge2020.com",
+    "version": "1.0.4",
     "engines": {
         "ghost": ">=0.4.0 <1.0.0"
     },
