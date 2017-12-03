@@ -2,7 +2,7 @@
     "name": "judge2020",
     "description" : "modification of ghost",
     "demo": "https://judge2020.com",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "engines": {
         "ghost": ">=0.4.0 <1.0.0"
     },
